@@ -1,0 +1,146 @@
+CUSTOMER G4
+CREATE TABLE Customer (
+    customer_id TEXT PRIMARY KEY NOT NULL,
+    customer_name TEXT NOT NULL,
+    customer_email TEXT NOT NULL,
+    customer_contact INTEGER NOT NULL,
+    room_id TEXT NOT NULL,
+    FOREIGN KEY (room_id) REFERENCES room(room_id)
+);
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C1', 'Kuwar', 'kuwar@123.com', 023456789, 'R1');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C2', 'Suyang', 'suyang@123.com', 023456788, 'R2');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C3', 'Alice', 'alice@123.com', 023456787, 'R3');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C4', 'Bob', 'bob@123.com', 023456786, 'R4');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C5', 'Charlie', 'charlie@123.com', 023456785, 'R5');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C6', 'David', 'david@123.com', 023456784, 'R6');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C7', 'Eva', 'eva@123.com', 023456783, 'R7');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C8', 'Frank', 'frank@123.com', 023456782, 'R8');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C9', 'Grace', 'grace@123.com', 023456781, 'R9');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C10', 'Hank', 'hank@123.com', 023456780, 'R10');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C11', 'Ivy', 'ivy@123.com', 023456779, 'R11');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C12', 'Jack', 'jack@123.com', 023456778, 'R12');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C13', 'Kathy', 'kathy@123.com', 023456777, 'R13');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C14', 'Leo', 'leo@123.com', 023456776, 'R14');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C15', 'Mona', 'mona@123.com', 023456775, 'R15');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C16', 'Nina', 'nina@123.com', 023456774, 'R16');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C17', 'Oscar', 'oscar@123.com', 023456773, 'R17');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C18', 'Paul', 'paul@123.com', 023456772, 'R18');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C19', 'Quincy', 'quincy@123.com', 023456771, 'R19');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C20', 'Rachel', 'rachel@123.com', 023456770, 'R20');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C21', 'Steve', 'steve@123.com', 023456769, 'R21');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C22', 'Tina', 'tina@123.com', 023456768, 'R22');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C23', 'Uma', 'uma@123.com', 023456767, 'R23');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C24', 'Vera', 'vera@123.com', 023456766, 'R24');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C25', 'Warren', 'warren@123.com', 023456765, 'R25');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C26', 'Xander', 'xander@123.com', 023456764, 'R26');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C27', 'Yara', 'yara@123.com', 023456763, 'R27');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C28', 'Zoe', 'zoe@123.com', 023456762, 'R28');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C29', 'Alan', 'alan@123.com', 023456761, 'R29');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C30', 'Beth', 'beth@123.com', 023456760, 'R30');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C31', 'Cameron', 'cameron@123.com', 023456759, 'R31');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C32', 'Diana', 'diana@123.com', 023456758, 'R32');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C33', 'Edward', 'edward@123.com', 023456757, 'R33');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C34', 'Fiona', 'fiona@123.com', 023456756, 'R34');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C35', 'George', 'george@123.com', 023456755, 'R35');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C36', 'Holly', 'holly@123.com', 023456754, 'R36');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C37', 'Ian', 'ian@123.com', 023456753, 'R37');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C38', 'Jill', 'jill@123.com', 023456752, 'R38');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C39', 'Keith', 'keith@123.com', 023456751, 'R39');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C40', 'Lena', 'lena@123.com', 023456750, 'R40');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C41', 'Megan', 'megan@123.com', 023456749, 'R41');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C42', 'Nash', 'nash@123.com', 023456748, 'R42');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C43', 'Olivia', 'olivia@123.com', 023456747, 'R43');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C44', 'Pauline', 'pauline@123.com', 023456746, 'R44');
+
+INSERT INTO Customer (customer_id, customer_name, customer_email, customer_contact, room_id) VALUES
+('C45', 'Quinn', 'quinn@123.com', 023456745, 'R45');
+
+INSERT INTO Customer (customer_id, customer_name
