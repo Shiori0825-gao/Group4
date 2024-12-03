@@ -1,0 +1,138 @@
+.mode columns 
+.headers on
+-- Create CUSTOMER table
+CREATE TABLE CUSTOMER (
+    Customer_ID INT PRIMARY KEY,
+    Name TEXT NOT NULL,
+    Email TEXT UNIQUE NOT NULL,
+    Phone_Number TEXT NOT NULL,
+    Password TEXT NOT NULL
+);
+
+-- Create ROOM_TYPE table
+CREATE TABLE ROOM_TYPE (
+    RoomTypeID INT PRIMARY KEY,
+    Name TEXT NOT NULL,
+    Price INT NOT NULL,
+    No_of_guests INT NOT NULL
+);
+
+-- Create ROOM table
+CREATE TABLE ROOM (
+    Room_ID INT PRIMARY KEY,
+    RoomTypeID INT NOT NULL,
+    Room_Number TEXT UNIQUE NOT NULL,
+    Floor INT NOT NULL,
+    Status TEXT NOT NULL,
+    Customer_ID INT,
+    FOREIGN KEY (RoomTypeID) REFERENCES ROOM_TYPE(RoomTypeID),
+    FOREIGN KEY (Customer_ID) REFERENCES CUSTOMER(Customer_ID)
+);
+
+-- Create RESERVATIONS table
+CREATE TABLE RESERVATIONS (
+    Reservation_ID INT PRIMARY KEY,
+    Customer_ID INT NOT NULL,
+    Reservation_Date TEXT NOT NULL,
+    Check_in TEXT NOT NULL,
+    Check_Out TEXT NOT NULL,
+    Room_Type TEXT NOT NULL,
+    Payment INT NOT NULL,
+    Final_Price INT NOT NULL,
+    No_of_rooms INT NOT NULL,
+    FOREIGN KEY (Customer_ID) REFERENCES CUSTOMER(Customer_ID)
+);
+
+-- Create Check-In Details table
+CREATE TABLE Check_In_Details (
+    Booking_ID INT PRIMARY KEY,
+    Room_number TEXT NOT NULL,
+    Reservation_ID INT NOT NULL,
+    Status TEXT NOT NULL,
+    Check_in_date TEXT NOT NULL,
+    Check_out_date TEXT NOT NULL,
+    FOREIGN KEY (Room_number) REFERENCES ROOM(Room_Number),
+    FOREIGN KEY (Reservation_ID) REFERENCES RESERVATIONS(Reservation_ID)
+);
+
+-- Insert sample data into CUSTOMER table
+INSERT INTO CUSTOMER (Customer_ID, Name, Email, Phone_Number, Password) VALUES
+(1, 'Customer_1', 'customer1@hotel.com', '1234567891', 'password1'),
+(2, 'Customer_2', 'customer2@hotel.com', '1234567892', 'password2'),
+(3, 'Customer_3', 'customer3@hotel.com', '1234567893', 'password3'),
+(4, 'Customer_4', 'customer4@hotel.com', '1234567894', 'password4'),
+(5, 'Customer_5', 'customer5@hotel.com', '1234567895', 'password5'),
+(6, 'Customer_6', 'customer6@hotel.com', '1234567896', 'password6'),
+(7, 'Customer_7', 'customer7@hotel.com', '1234567897', 'password7'),
+(8, 'Customer_8', 'customer8@hotel.com', '1234567898', 'password8'),
+(9, 'Customer_9', 'customer9@hotel.com', '1234567899', 'password9'),
+(10, 'Customer_10', 'customer10@hotel.com', '1234567890', 'password10'),
+(11, 'Customer_11', 'customer11@hotel.com', '1234567881', 'password11'),
+(12, 'Customer_12', 'customer12@hotel.com', '1234567882', 'password12'),
+(13, 'Customer_13', 'customer13@hotel.com', '1234567883', 'password13'),
+(14, 'Customer_14', 'customer14@hotel.com', '1234567884', 'password14'),
+(15, 'Customer_15', 'customer15@hotel.com', '1234567885', 'password15');
+
+-- Insert sample data into ROOM_TYPE table
+INSERT INTO ROOM_TYPE (RoomTypeID, Name, Price, No_of_guests) VALUES
+(1, 'Type_1', 110, 2),
+(2, 'Type_2', 120, 3),
+(3, 'Type_3', 130, 4),
+(4, 'Type_4', 140, 1),
+(5, 'Type_5', 150, 2);
+
+-- Insert sample data into ROOM table
+INSERT INTO ROOM (Room_ID, RoomTypeID, Room_Number, Floor, Status, Customer_ID) VALUES
+(1, 1, 'R001', 1, 'Available', NULL),
+(2, 2, 'R002', 2, 'Available', NULL),
+(3, 3, 'R003', 3, 'Available', NULL),
+(4, 4, 'R004', 1, 'Available', NULL),
+(5, 5, 'R005', 2, 'Available', NULL),
+(6, 1, 'R006', 3, 'Available', NULL),
+(7, 2, 'R007', 1, 'Available', NULL),
+(8, 3, 'R008', 2, 'Available', NULL),
+(9, 4, 'R009', 3, 'Available', NULL),
+(10, 5, 'R010', 1, 'Available', NULL),
+(11, 1, 'R011', 2, 'Available', NULL),
+(12, 2, 'R012', 3, 'Available', NULL),
+(13, 3, 'R013', 1, 'Available', NULL),
+(14, 4, 'R014', 2, 'Available', NULL),
+(15, 5, 'R015', 3, 'Available', NULL);
+
+-- Insert sample data into RESERVATIONS table
+INSERT INTO RESERVATIONS (Reservation_ID, Customer_ID, Reservation_Date, Check_in, Check_Out, Room_Type, Payment, Final_Price, No_of_rooms) VALUES
+(1, 1, '2024-12-01', '2024-12-02', '2024-12-04', 'Type_1', 120, 240, 1),
+(2, 2, '2024-12-02', '2024-12-03', '2024-12-05', 'Type_2', 130, 260, 1),
+(3, 3, '2024-12-03', '2024-12-04', '2024-12-06', 'Type_3', 140, 280, 1),
+(4, 4, '2024-12-04', '2024-12-05', '2024-12-07', 'Type_4', 150, 300, 1),
+(5, 5, '2024-12-05', '2024-12-06', '2024-12-08', 'Type_5', 160, 320, 1);
+
+-- Insert sample data into Check-In Details table
+INSERT INTO Check_In_Details (Booking_ID, Room_number, Reservation_ID, Status, Check_in_date, Check_out_date) VALUES
+(1, 'R001', 1, 'Checked-In', '2024-12-02', '2024-12-04'),
+(2, 'R002', 2, 'Checked-In', '2024-12-03', '2024-12-05'),
+(3, 'R003', 3, 'Checked-In', '2024-12-04', '2024-12-06');
+
+
+SELECT * 
+FROM ROOM 
+WHERE Status = 'Available';
+
+SELECT RESERVATIONS.Reservation_ID, CUSTOMER.Name, RESERVATIONS.Room_Type, RESERVATIONS.Check_in, RESERVATIONS.Check_Out
+FROM RESERVATIONS
+JOIN CUSTOMER ON RESERVATIONS.Customer_ID = CUSTOMER.Customer_ID
+WHERE CUSTOMER.Name = 'Customer_1';
+
+SELECT Room_Type, COUNT(*) AS Booked_Rooms
+FROM RESERVATIONS
+GROUP BY Room_Type;
+
+
+SELECT CUSTOMER.Name, SUM(RESERVATIONS.Final_Price) AS Total_Spent
+FROM RESERVATIONS
+JOIN CUSTOMER ON RESERVATIONS.Customer_ID = CUSTOMER.Customer_ID
+GROUP BY CUSTOMER.Name;
+
+SELECT COUNT(*) AS Available_Rooms
+FROM ROOM
+WHERE Status = 'Available';
